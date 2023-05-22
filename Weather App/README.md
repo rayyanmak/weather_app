@@ -1,2 +1,1 @@
-# weather_app
-# weather_app
+Basic web application I made using the Weather API. Enter in your town name and it will return some weather data. Used HTML and CSS to create the webpage for it. Check it out and let me know if you have any questions!
