@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather App</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Weather App</h1>
+    <div class="container">
+        <form method="POST" action="/">
+            <input type="text" name="location" placeholder="Enter a location">
+            <input type="submit" value="Get Weather">
+        </form>
+
+        {% if weather_data %}
+        <div class="weather-info">
+            <h2>Weather Information for {{ weather_data['location']['name'] }}</h2>
+            <p>Temperature: {{ weather_data['current']['temp_c'] }}°C / {{ weather_data['current']['temp_f'] }}°F</p>
+            <p>Condition: {{ weather_data['current']['condition']['text'] }}</p>
+            <p>Wind: {{ weather_data['current']['wind_kph'] }} km/h</p>
+            <p>Pressure: {{ weather_data['current']['pressure_mb'] }} mb</p>
+            <p>Humidity: {{ weather_data['current']['humidity'] }}%</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
